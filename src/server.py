@@ -32,6 +32,11 @@ def criar_pedido(pedido: Order, db: Session = Depends(get_db)):
 @app.get('/pedidos')
 def list_pedidos(db: Session = Depends(get_db)):
     lista_pedidos = RepositorioPedidos(db).listar()
-    
+
 
     return lista_pedidos
+
+
+@app.post('/vendas')
+def criar_vendas():
+    pass
