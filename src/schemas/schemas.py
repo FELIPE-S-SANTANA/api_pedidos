@@ -19,10 +19,14 @@ class Product(BaseModel):
 
 class Order(BaseModel):
     id: Optional[str] = None
-    quatidade: int
+    quantidade: int
     entrega: bool = True
     endereco: str
     observacoes: Optional[str] = 'Sem observações'
+    id_produto: int
+
+    class Config():
+        orm_mode = True
 
 
 class User(BaseModel):
